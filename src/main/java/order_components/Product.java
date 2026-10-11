@@ -8,6 +8,11 @@ public class Product {
     public Product() {
     }
 
+    public Product(String product_code, int quantity) {
+        this.setProductCode(product_code);
+        this.setQuantity(quantity);
+    }
+
     public String getProductCode() {
         return productCode;
     }

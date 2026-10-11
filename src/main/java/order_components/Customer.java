@@ -7,6 +7,9 @@ public class Customer {
     private String email;
     private String phoneNumber;
 
+    public Customer() {
+    }
+
     public Customer(String first_name, String last_name, String email, String phone_number) {
         this.setFirstName(first_name);
         this.setLastName(last_name);

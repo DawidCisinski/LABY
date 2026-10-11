@@ -10,6 +10,11 @@ public class OrderRequest {
     public OrderRequest() {
     }
 
+    public OrderRequest(Customer customer, List<Product> products) {
+        this.setCustomer(customer);
+        this.setProducts(products);
+    }
+
     public Customer getCustomer() {
         return customer;
     }

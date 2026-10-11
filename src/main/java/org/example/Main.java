@@ -4,7 +4,10 @@ package org.example;
 import loaders.AppSettingsLoader;
 import loaders.JsonFilesPathLoader;
 
+import order_components.OrderCodeGenerator;
+import order_components.OrderRequest;
 import org.apache.commons.configuration2.ex.ConfigurationException;
+import tools.jackson.databind.ObjectMapper;
 
 import java.io.File;
 import java.util.List;
@@ -17,6 +20,18 @@ public class Main {
 
             List<File> files_path_list = json_files_loader.getJsonFiles(settings_loader.getOrdersDirectory());
 
+            ObjectMapper mapper = new ObjectMapper();
+
+            for (File file : files_path_list) {
+
+                OrderRequest order =
+                        mapper.readValue(file, OrderRequest.class);
+
+                System.out.println(order.getCustomer().getFirstName());
+                String orderNumber = OrderCodeGenerator.generate(order);
+
+                System.out.println("Order number: " + orderNumber);
+            }
 
 
         } catch (ConfigurationException e) {
