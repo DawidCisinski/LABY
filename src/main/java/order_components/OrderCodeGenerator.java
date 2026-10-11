@@ -1,43 +1,34 @@
 package order_components;
 
-import java.nio.charset.StandardCharsets;
-import java.security.MessageDigest;
+import java.util.List;
+import java.util.ArrayList;
 
 public class OrderCodeGenerator {
+
     public static String generate(OrderRequest order) {
 
-        StringBuilder data = new StringBuilder();
+        List<String> list_data = new ArrayList<>();;
 
-        data.append(order.getCustomer().getFirstName());
-        data.append(order.getCustomer().getLastName());
-        data.append(order.getCustomer().getEmail());
-        data.append(order.getCustomer().getPhoneNumber());
+        list_data.add(order.getCustomer().getFirstName());
+        list_data.add(order.getCustomer().getLastName());
+        list_data.add(order.getCustomer().getEmail());
+        list_data.add(order.getCustomer().getPhoneNumber());
 
         for (Product product : order.getProducts()) {
-            data.append(product.getProductCode());
-            data.append(product.getQuantity());
+            list_data.add(product.getProductCode());
+            list_data.add(Integer.toString(product.getQuantity()));
+        }
+        String string_data = String.join("", list_data);
+
+        int hash_data = Math.abs(string_data.hashCode());
+
+        string_data = Integer.toString(hash_data);
+
+        while (string_data.length() < 12) {
+            string_data = "0" + string_data;
         }
 
-        try {
-
-            MessageDigest md =
-                    MessageDigest.getInstance("SHA-256");
-
-            byte[] hash =
-                    md.digest(data.toString()
-                            .getBytes(StandardCharsets.UTF_8));
-
-            StringBuilder result = new StringBuilder();
-
-            for (int i = 0; i < 8; i++) {
-                result.append(
-                        String.format("%02x", hash[i]));
-            }
-
-            return result.toString().toUpperCase();
-
-        } catch (Exception e) {
-            throw new RuntimeException(e);
-        }
+        return string_data.toUpperCase().substring(0, 12);
     }
 }
+

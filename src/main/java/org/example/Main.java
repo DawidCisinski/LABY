@@ -20,25 +20,15 @@ public class Main {
 
             List<File> files_path_list = json_files_loader.getJsonFiles(settings_loader.getOrdersDirectory());
 
-            ObjectMapper mapper = new ObjectMapper();
+            OrdersListSystem order_list = new OrdersListSystem(files_path_list);
 
-            for (File file : files_path_list) {
-
-                OrderRequest order =
-                        mapper.readValue(file, OrderRequest.class);
-
-                System.out.println(order.getCustomer().getFirstName());
-                String orderNumber = OrderCodeGenerator.generate(order);
-
-                System.out.println("Order number: " + orderNumber);
-            }
-
+            order_list.map();
 
         } catch (ConfigurationException e) {
-            System.out.println("Error: " + e.getMessage());
+            System.out.println("(Error) invalid [appsettings] file format: " + e.getMessage());
             e.printStackTrace();
         } catch (RuntimeException e) {
-            System.out.println("Error: " + e.getMessage());
+            System.out.println("(Error) invalid orders folder path: " + e.getMessage());
             e.printStackTrace();
         }
     }
