@@ -11,12 +11,12 @@ public class OrdersListSystem {
 
     private List<File> files_path_list;
 
-    public OrdersListSystem(List<File> files_path_list) {
-        this.setFilesPathList(files_path_list);
-    }
-
     public void setFilesPathList(List<File> files_path_list) {
         this.files_path_list = files_path_list;
+    }
+
+    public OrdersListSystem(List<File> files_path_list) {
+        this.setFilesPathList(files_path_list);
     }
 
     public List<File> getFilesPathList() {
