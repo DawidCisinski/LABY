@@ -22,15 +22,3 @@ public class AppSettingsLoader {
         return ordersDirectory;
     }
 }
-
-/*
-    try {
-        Configurations configs = new Configurations();
-        Configuration config =
-                configs.properties("appsettings.properties");
-
-        this.ordersDirectory =
-                config.getString("orders.directory");
-    } catch (ConfigurationException e) {
-        System.out.println("Error: " + e.getMessage());
-*/
