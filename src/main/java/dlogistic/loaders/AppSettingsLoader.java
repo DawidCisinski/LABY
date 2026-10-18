@@ -1,4 +1,4 @@
-package rtnklogistic.loaders;
+package dlogistic.loaders;
 
 import org.apache.commons.configuration2.Configuration;
 import org.apache.commons.configuration2.builder.fluent.Configurations;

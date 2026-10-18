@@ -1,4 +1,4 @@
-package rtnklogistic.order_components;
+package dlogistic.order_components;
 
 import java.util.List;
 import java.util.ArrayList;

@@ -1,8 +1,8 @@
-package rtnklogistic.app;
+package dlogistic.app;
 
 
-import rtnklogistic.loaders.AppSettingsLoader;
-import rtnklogistic.loaders.JsonFilesPathLoader;
+import dlogistic.loaders.AppSettingsLoader;
+import dlogistic.loaders.JsonFilesPathLoader;
 
 import org.apache.commons.configuration2.ex.ConfigurationException;
 
