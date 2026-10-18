@@ -1,7 +1,7 @@
-package org.example;
+package rtnklogistic.app;
 
-import order_components.OrderCodeGenerator;
-import order_components.OrderRequest;
+import rtnklogistic.order_components.OrderCodeGenerator;
+import rtnklogistic.order_components.OrderRequest;
 import tools.jackson.databind.ObjectMapper;
 
 import java.io.File;
