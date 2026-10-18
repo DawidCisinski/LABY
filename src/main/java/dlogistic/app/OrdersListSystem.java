@@ -29,8 +29,7 @@ public class OrdersListSystem {
 
         for (File file : getFilesPathList()) {
 
-            OrderRequest order =
-                    mapper.readValue(file, OrderRequest.class);
+            OrderRequest order = mapper.readValue(file, OrderRequest.class);
 
             System.out.println(order.getCustomer().getFirstName());
             String orderNumber = OrderCodeGenerator.generate(order);
