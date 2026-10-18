@@ -2,6 +2,7 @@ package dlogistic.app;
 
 import dlogistic.order_components.OrderCodeGenerator;
 import dlogistic.order_components.OrderRequest;
+import dlogistic.order_components.Product;
 import tools.jackson.databind.ObjectMapper;
 
 import java.io.File;
@@ -33,6 +34,9 @@ public class OrdersListSystem {
 
             System.out.println(order.getCustomer().getFirstName());
             String orderNumber = OrderCodeGenerator.generate(order);
+            for (Product product : order.getProducts()) {
+                System.out.println("product unit: " + product.getUnit());
+            }
 
             System.out.println("Order number: " + orderNumber);
 

@@ -16,7 +16,8 @@ public class OrderCodeGenerator {
 
         for (Product product : order.getProducts()) {
             list_data.add(product.getProductCode());
-            list_data.add(Integer.toString(product.getQuantity()));
+            list_data.add(Double.toString(product.getQuantity()));
+            list_data.add(product.getUnit());
         }
         String string_data = String.join("", list_data);
 

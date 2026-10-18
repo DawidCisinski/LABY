@@ -2,15 +2,17 @@ package dlogistic.order_components;
 
 public class Product {
 
+    private double quantity;
+    private String unit;
     private String productCode;
-    private int quantity;
 
     public Product() {
     }
 
-    public Product(String product_code, int quantity) {
+    public Product(String product_code, double quantity, String unit) {
         this.setProductCode(product_code);
         this.setQuantity(quantity);
+        this.setUnit(unit);
     }
 
     public String getProductCode() {
@@ -21,11 +23,17 @@ public class Product {
         this.productCode = productCode;
     }
 
-    public int getQuantity() {
+    public String getUnit() { return this.unit; }
+
+    public void setUnit(String Unit) {
+        this.unit = Unit;
+    }
+
+    public double getQuantity() {
         return quantity;
     }
 
-    public void setQuantity(int quantity) {
+    public void setQuantity(double quantity) {
         this.quantity = quantity;
     }
 }
