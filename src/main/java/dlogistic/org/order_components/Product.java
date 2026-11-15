@@ -1,4 +1,4 @@
-package dlogistic.order_components;
+package dlogistic.org.order_components;
 
 public class Product {
 

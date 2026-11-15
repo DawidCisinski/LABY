@@ -1,4 +1,4 @@
-package dlogistic.loaders;
+package dlogistic.org.loaders;
 
 import org.apache.commons.configuration2.Configuration;
 import org.apache.commons.configuration2.builder.fluent.Configurations;
@@ -6,7 +6,6 @@ import org.apache.commons.configuration2.ex.ConfigurationException;
 
 public class AppSettingsLoader {
 
-    //final dlatego by po przypisaniu wartości nie dało jej sie zmienić!
     private final String ordersDirectory;
 
     public AppSettingsLoader() throws ConfigurationException {
