@@ -10,12 +10,12 @@ public class AppSettingsLoader {
 
     public AppSettingsLoader() throws ConfigurationException {
         Configurations configs = new Configurations();
-        Configuration config;
-        try {
-            config = configs.properties("appsettings.docker.properties");
-        } catch (ConfigurationException e) {
-            config = configs.properties("appsettings.properties");
-        }
+        Configuration config = configs.properties("appsettings.properties");;
+        //try {
+        //    config = configs.properties("appsettings.docker.properties");
+        //} catch (ConfigurationException e) {
+        //    config = configs.properties("appsettings.properties");
+        //}
 
         this.ordersDirectory = config.getString("orders.directory");
 
