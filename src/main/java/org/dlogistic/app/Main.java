@@ -1,8 +1,8 @@
-package dlogistic.org.app;
+package org.dlogistic.app;
 
 
-import dlogistic.org.loaders.AppSettingsLoader;
-import dlogistic.org.loaders.JsonFilesPathLoader;
+import org.dlogistic.loaders.AppSettingsLoader;
+import org.dlogistic.loaders.JsonFilesPathLoader;
 
 import org.apache.commons.configuration2.ex.ConfigurationException;
 

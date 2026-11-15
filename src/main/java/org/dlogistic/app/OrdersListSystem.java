@@ -1,8 +1,8 @@
-package dlogistic.org.app;
+package org.dlogistic.app;
 
-import dlogistic.org.order_components.OrderCodeGenerator;
-import dlogistic.org.order_components.OrderRequest;
-import dlogistic.org.order_components.Product;
+import org.dlogistic.order_components.OrderCodeGenerator;
+import org.dlogistic.order_components.OrderRequest;
+import org.dlogistic.order_components.Product;
 import tools.jackson.databind.ObjectMapper;
 
 import java.io.File;

@@ -1,4 +1,4 @@
-package dlogistic.org.loaders;
+package org.dlogistic.loaders;
 
 import java.io.File;
 import java.util.ArrayList;

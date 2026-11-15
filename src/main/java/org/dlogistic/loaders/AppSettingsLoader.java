@@ -1,4 +1,4 @@
-package dlogistic.org.loaders;
+package org.dlogistic.loaders;
 
 import org.apache.commons.configuration2.Configuration;
 import org.apache.commons.configuration2.builder.fluent.Configurations;
