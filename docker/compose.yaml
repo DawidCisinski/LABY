@@ -1,8 +1,8 @@
 name: dlogistic
 services:
   my-app:
-    #build: .
     image: dlogistic:1
     container_name: dlogistic
     volumes:
       - "./config:/etc"
+      - "./orders:/orders"
