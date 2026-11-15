@@ -1,8 +1,7 @@
+name: laby2
 services:
-  laby2:
-    build:
-      context: ..
-      dockerfile: Dockerfile
-
+  my-app:
+    image: laby2:1
+    container_name: laby2
     volumes:
-      - ./orders:/app/orders
+      - "./config:/etc"

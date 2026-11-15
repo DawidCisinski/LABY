@@ -1,23 +1,12 @@
-# Etap budowania
-FROM maven:latest AS build
-#FROM maven:3.9.9-eclipse-temurin-25 AS build
-RUN java --version
+FROM maven:3.9.12-eclipse-temurin-25
 
 WORKDIR /app
 
-COPY . .
+COPY pom.xml .
+RUN mvn dependency:go-offline
 
-# Nadpisanie konfiguracji dockerowej
-RUN cp src/main/resources/appsettings.docker.properties \
-          src/main/resources/appsettings.properties
+COPY src ./src
 
 RUN mvn clean package
 
-# Etap uruchomienia
-FROM eclipse-temurin:25-jre
-
-WORKDIR /app
-
-COPY --from=build /app/target/*.jar app.jar
-
-ENTRYPOINT ["java", "-jar", "app.jar"]
+CMD ["java", "-jar", "target/my-app-1.jar"]
