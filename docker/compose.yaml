@@ -1,7 +1,7 @@
-name: laby2
+name: dlogistic
 services:
   my-app:
-    image: laby2:1
-    container_name: laby2
+    image: dlogistic:1
+    container_name: dlogistic
     volumes:
       - "./config:/etc"
