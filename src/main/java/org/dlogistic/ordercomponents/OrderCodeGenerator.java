@@ -1,4 +1,4 @@
-package org.dlogistic.order_components;
+package org.dlogistic.ordercomponents;
 
 import java.util.List;
 import java.util.ArrayList;

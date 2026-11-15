@@ -1,4 +1,4 @@
-package org.dlogistic.order_components;
+package org.dlogistic.ordercomponents;
 
 public class Customer {
 

@@ -1,0 +1,8 @@
+services:
+  laby2:
+    build:
+      context: ..
+      dockerfile: Dockerfile
+
+    volumes:
+      - ./orders:/app/orders
