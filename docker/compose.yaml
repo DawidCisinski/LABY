@@ -5,4 +5,4 @@ services:
     image: zamow:1
     container_name: "zamow"
     volumes:
-      - "./orders:/orders"
+      - "./orders:/docker/orders"
