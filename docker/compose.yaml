@@ -1,8 +1,8 @@
-name: "zamow-app"
+name: "dlogistic-app"
 services:
   my-app:
     build: ..
-    image: zamow:1
-    container_name: "zamow"
+    image: dlogistic:1
+    container_name: "dlogistic"
     volumes:
       - "./orders:/docker/orders"
